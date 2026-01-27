@@ -10,7 +10,8 @@ const socialIcons = [
 
 export default function Hero() {
   return (
-    <section className="w-full flex items-center bg-[#171B1A]">
+    <section className="relative w-full flex items-center bg-[#171B1A] h-[calc(100vh-80px)]">
+
       {/* Left Section */}
       <div className="relative w-[370px]">
         {/* Image box */}
@@ -53,20 +54,20 @@ export default function Hero() {
 
       {/* Middle Content */}
       <div className="flex-1 flex flex-col justify-center max-w-[640px] ml-16">
-        <p className="gradient-text font-bold mb-3 tracking-widest">
+        <p className="gradient-text font-bold mb-4 tracking-widest text-sm">
           INTRODUCTION
         </p>
 
-        <h1 className="text-[48px] font-bold mb-5 text-white leading-tight">
+        <h1 className="text-5xl font-bold mb-6 text-white leading-tight">
           I&apos;m a Creative Developer &amp; <br />
           UI/UX Design Expert
         </h1>
 
-        <p className=" text-white font-bold mb-4">
+        <p className="text-white font-bold mb-5 text-base">
           24 years / Robert Smith / UK London
         </p>
 
-        <p className="w-[591px] h-[147px] font-['DM_Sans'] font-medium text-[16px] leading-[100%] tracking-[0%] text-[#C6C6C6] mb-8">
+        <p className="max-w-2xl font-medium text-base leading-relaxed tracking-normal text-gray-300 mb-8">
           Prolific, full stack web developer with a passion for metrics and
           beating former "best-yets. Prototyped 25 new product features per year
           for Flexor, Inc. Decreased rework by 22% and costs by 15%.
@@ -105,10 +106,13 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      {/* ===== Right Vertical Bar (Image Based) ===== */}
-      <div className="absolute right-0 top-0 h-full w-[80px] flex flex-col items-center justify-between py-10 z-20">
+      {/* ===== Right Vertical Bar */}
+
+      
+
+      <div className="absolute right-0 bottom-0 h-[433px] w-[92px] z-10 flex flex-col items-center ">
         {/* Vertical line image */}
-        <div className="relative w-[92px] h-[433px] bottom-0">
+        <div className="relative w-full h-full">
           <Image
             src="/images/vertical-line.png"
             alt="vertical line"
@@ -116,13 +120,19 @@ export default function Hero() {
             className="object-contain object-bottom scale-x-[-1]"
           />
         </div>
-
-        {/* Language Switch */}
-        <div className="absolute bottom-0 flex flex-col items-center gap-3 mb-10">
-          <div className="w-10 h-10 rounded-full bg-[#2A2A2A] text-white flex items-center justify-center text-sm cursor-pointer">
+<p
+        className="text-center justify-center items-center absolute right-2 top-1/2 -translate-y-1/2 
+              rotate-90 origin-right
+              text-[#A5A5A5] text-[10px] tracking-widest whitespace-nowrap mt-15 mr-8"
+      >
+        © design by themeshifter developed by gethugothemes
+      </p>
+        {/* Language Switch - Overlay */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20">
+          <div className="w-[32px] h-[32px] rounded-full bg-[#2A2A2A] text-white flex items-center justify-center text-sm cursor-pointer">
             Fr
           </div>
-          <div className="w-10 h-10 rounded-full bg-[#F5BD4D] text-black flex items-center justify-center text-sm font-bold cursor-pointer">
+          <div className="w-[32px] h-[32px] rounded-full bg-[#F5BD4D] text-black flex items-center justify-center text-sm font-bold cursor-pointer">
             En
           </div>
         </div>
