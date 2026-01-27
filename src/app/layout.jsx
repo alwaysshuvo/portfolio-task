@@ -12,7 +12,7 @@ const dmSans = DM_Sans({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${dmSans.className} bg-[##171B1A] text-white`}>
+      <body className={`${dmSans.className} bg-[#171B1A] text-white`}>
         <div className="flex">
           <Sidebar />
           <div className="flex-1">
