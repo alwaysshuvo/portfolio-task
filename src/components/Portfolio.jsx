@@ -1,6 +1,11 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import PortfolioFilter from "./portfolio-filter"; 
 
 export default function Portfolio() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
   const projects = [
     {
       id: 1,
@@ -8,6 +13,7 @@ export default function Portfolio() {
       subtitle: "Figma mockup PSD editable",
       image: "/images/portfolio-1.png",
       aspectRatio: 332 / 332,
+      category: "Graphic Design",
     },
     {
       id: 2,
@@ -15,13 +21,15 @@ export default function Portfolio() {
       subtitle: "Mobile UI Design",
       image: "/images/portfolio-3.png",
       aspectRatio: 332 / 447,
+      category: "Mobile App",
     },
     {
       id: 3,
-       title: "Interior Design",
+      title: "Interior Design",
       subtitle: "Home Design Project",
       image: "/images/portfolio-6.png",
       aspectRatio: 332 / 204,
+      category: "UI/UX Design",
     },
     {
       id: 4,
@@ -29,6 +37,7 @@ export default function Portfolio() {
       subtitle: "Fitness Studio Website",
       image: "/images/portfolio-8.png",
       aspectRatio: 332 / 204,
+      category: "UI/UX Design",
     },
     {
       id: 5,
@@ -36,6 +45,7 @@ export default function Portfolio() {
       subtitle: "Design Project",
       image: "/images/portfolio-2.png",
       aspectRatio: 332 / 248,
+      category: "Graphic Design",
     },
     {
       id: 6,
@@ -43,6 +53,7 @@ export default function Portfolio() {
       subtitle: "Wearable Design",
       image: "/images/portfolio-4.png",
       aspectRatio: 332 / 220,
+      category: "Mobile App",
     },
     {
       id: 7,
@@ -50,6 +61,7 @@ export default function Portfolio() {
       subtitle: "Product Mockup",
       image: "/images/portfolio-5.png",
       aspectRatio: 332 / 220,
+      category: "Graphic Design",
     },
     {
       id: 8,
@@ -57,6 +69,7 @@ export default function Portfolio() {
       subtitle: "Fitness Studio Website",
       image: "/images/portfolio-7.png",
       aspectRatio: 332 / 260,
+      category: "UI/UX Design",
     },
     {
       id: 9,
@@ -64,18 +77,28 @@ export default function Portfolio() {
       subtitle: "Photography Project",
       image: "/images/portfolio-9.png",
       aspectRatio: 332 / 204,
+      category: "Photography",
     },
   ];
 
- 
-  const leftColumn = projects.slice(0, 4);
-  const rightColumn = projects.slice(4);
+  // ✅ filter logic
+  const filteredProjects =
+    activeCategory === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeCategory);
+
+  
+  const leftColumn = filteredProjects.slice(0, 4);
+  const rightColumn = filteredProjects.slice(4);
 
   return (
     <section className="w-full bg-[#171B1A] py-24 px-4">
-      <h2 className="text-center text-[48px] font-bold text-white mb-16">
+      <h2 className="text-center text-[48px] font-bold text-white mb-8">
         Portfolio
       </h2>
+
+      {/* ✅ filter component call */}
+      <PortfolioFilter onChange={setActiveCategory} />
 
       {/* Two Columns */}
       <div className="max-w-3xl mx-auto grid grid-cols-2 gap-6">
@@ -97,7 +120,7 @@ export default function Portfolio() {
   );
 }
 
-/* Reusable Card Component */
+
 function Card({ item }) {
   return (
     <div
@@ -111,7 +134,6 @@ function Card({ item }) {
         className="object-cover group-hover:scale-105 transition duration-300"
       />
 
-      {/* Hover Overlay */}
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition flex flex-col items-center justify-center opacity-0 group-hover:opacity-100">
         <h3 className="text-white font-bold text-lg text-center">
           {item.title}
@@ -121,7 +143,6 @@ function Card({ item }) {
         </p>
       </div>
 
-      {/* Bottom text */}
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3">
         <h4 className="text-white text-sm font-semibold">
           {item.title}
