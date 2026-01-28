@@ -17,7 +17,7 @@ export default function Hero() {
         {/* Image box */}
         <div className="bg-black w-full md:w-[370px] h-[300px] md:h-[470px] overflow-hidden rounded-lg md:rounded-none">
           <Image
-            src="/images/hero.png"
+            src="/images/Hero.png"
             alt="Daryl Smith - Profile Photo"
             width={370}
             height={460}
