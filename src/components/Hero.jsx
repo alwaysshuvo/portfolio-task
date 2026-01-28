@@ -15,7 +15,7 @@ export default function Hero() {
       {/* Left Section */}
       <div className="relative w-[370px]">
         {/* Image box */}
-        <div className="bg-black w-[370px] h-[460px] overflow-hidden">
+        <div className="bg-black w-[370px] h-[470px] overflow-hidden">
           <Image
             src="/images/hero.png"
             alt="profile"
