@@ -13,25 +13,25 @@ export default function Contact() {
   };
 
   return (
-    <section className="w-full bg-[#171B1A] py-24">
+    <section id="contact" className="w-full bg-[#171B1A] py-12 md:py-24">
       {/* Section Header */}
-      <h2 className="text-center text-[48px] font-bold text-white mb-20">
+      <h2 className="text-center text-3xl md:text-[48px] font-bold text-white mb-12 md:mb-20 px-4">
         Contact
       </h2>
 
       {/* Left empty + Right content */}
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Left empty space */}
-        <div className="w-[525px]"></div>
+        <div className="hidden md:block md:w-[525px]"></div>
 
         {/* Right content */}
-        <div className="flex-1 pr-16">
+        <div className="flex-1 md:pr-16 px-4 md:px-0">
           <div className="max-w-2xl">
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               {/* First & Last Name */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <label className="block text-white font-semibold mb-3 text-[20px]">
+                  <label className="block text-white font-semibold mb-2 md:mb-3 text-base md:text-[20px]">
                     Fast name*
                   </label>
                   <input
@@ -42,7 +42,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-white font-semibold mb-3 text-[20px]">
+                  <label className="block text-white font-semibold mb-2 md:mb-3 text-base md:text-[20px]">
                     Last name*
                   </label>
                   <input
@@ -54,9 +54,9 @@ export default function Contact() {
               </div>
 
               {/* Email & Phone */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <label className="block text-white font-semibold mb-3 text-[20px]">
+                  <label className="block text-white font-semibold mb-2 md:mb-3 text-base md:text-[20px]">
                     Email*
                   </label>
                   <input
@@ -67,7 +67,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-white font-semibold mb-3 text-[20px]">
+                  <label className="block text-white font-semibold mb-2 md:mb-3 text-base md:text-[20px]">
                     Phone*
                   </label>
                   <input
@@ -80,7 +80,7 @@ export default function Contact() {
 
               {/* Message */}
               <div>
-                <label className="block text-white font-semibold mb-3 text-[20px]">
+                <label className="block text-white font-semibold mb-2 md:mb-3 text-base md:text-[20px]">
                   Message*
                 </label>
                 <textarea
@@ -93,14 +93,14 @@ export default function Contact() {
               {/* Button */}
               <button
                 type="submit"
-                className="w-full py-3 rounded-lg bg-[#f59e0b] text-white font-bold text-base hover:bg-[#F5BD4D] transition"
+                className="w-full py-2 md:py-3 rounded-lg bg-[#f59e0b] text-white font-bold text-sm md:text-base hover:bg-[#F5BD4D] transition"
               >
                 Send message
               </button>
 
               {/* Success Message */}
               {sent && (
-                <p className="text-green-400 text-center font-semibold mt-4">
+                <p className="text-green-400 text-center font-semibold mt-4 text-sm md:text-base">
                   ✅ Message sent successfully!
                 </p>
               )}

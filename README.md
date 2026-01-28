@@ -1,36 +1,249 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+﻿# Daryl Smith - Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with **Next.js 16** and **Tailwind CSS**, showcasing frontend development and UI/UX design expertise. This project demonstrates professional web design practices including performance optimization, accessibility compliance, and mobile responsiveness.
 
-First, run the development server:
+##  Project Overview
 
-```bash
+This is a personal portfolio website for **Daryl Smith**, a Creative Developer and UI/UX Design Expert. The website showcases:
+
+- **Hero Section**: Eye-catching introduction with social media links
+- **Resume Section**: Education and work history timeline
+- **Skills Section**: Professional skills with progress bars
+- **Portfolio Section**: Masonry grid layout of featured projects
+- **Blog Section**: Latest articles and insights
+- **Pricing Section**: Service packages and pricing tiers
+- **Contact Section**: Contact form for inquiries
+- **Responsive Navigation**: Sidebar and navbar for easy navigation
+
+##  Tech Stack
+
+| Technology | Purpose | Version |
+|------------|---------|---------|
+| **Next.js** | React framework | 16.1.5 |
+| **React** | UI library | 19.2.3 |
+| **Tailwind CSS** | Utility-first CSS framework | 4.x |
+| **JavaScript** | Programming language | ES6+ |
+
+### Development Tools
+- **Node.js** - Runtime environment
+- **npm** - Package manager
+- **ESLint** - Code quality & linting
+- **PostCSS** - CSS processing
+
+##  Features
+
+### Core Features
+ **Fully Responsive Design**
+- Optimized for mobile (640px)
+- Tablet layouts (641px - 1024px)
+- Desktop layouts (1025px)
+- No horizontal scrolling or overflow issues
+
+ **Performance Optimized**
+- Next.js Image optimization
+- Optimized font loading (DM Sans from Google Fonts)
+- Minimal CSS with Tailwind
+- Lazy loading for images below the fold
+- Static generation where possible
+
+ **SEO & Meta Tags**
+- Comprehensive metadata setup
+- Open Graph tags for social sharing
+- Semantic HTML5 structure
+- Proper heading hierarchy
+- Descriptive alt text for all images
+
+ **Accessibility (WCAG 2.1)**
+- All images have descriptive alt text
+- Form labels properly associated with inputs
+- Keyboard navigation support
+- Focus indicators on interactive elements
+- ARIA labels for icon buttons and navigation
+- Color contrast meets WCAG AA standards
+- Semantic HTML elements (<section>, <main>, <nav>, etc.)
+
+ **Modern UI/UX**
+- Dark theme with accent colors
+- Smooth transitions and hover effects
+- Professional typography
+- Consistent spacing and layout
+- Glassmorphism effects where appropriate
+
+ **Component-Based Architecture**
+- Modular React components
+- Reusable UI elements
+- Easy to maintain and update
+- Clear separation of concerns
+
+##  Responsive Behavior
+
+### Mobile (640px)
+- Sidebar: Hidden, content accessible via menu
+- Navigation: Compact navbar with adjusted spacing
+- Hero Section: Stacked layout, responsive image sizing
+- Grid Layouts: Single column layouts that stack properly
+- Typography: Reduced font sizes for better readability on small screens
+- Spacing: Adjusted padding and margins for mobile
+
+### Tablet (641px - 1024px)
+- Sidebar: Visible with optimized width
+- Navigation: Standard navbar layout
+- Hero Section: Partial layout optimization
+- Grid Layouts: 2-column grids where appropriate
+- Typography: Medium font sizes
+- Spacing: Balanced padding and margins
+
+### Desktop (1025px)
+- Full Layout: All features visible and optimized
+- Sidebar: Full-width navigation
+- Hero Section: Side-by-side layout with full imagery
+- Grid Layouts: 3-4 column layouts
+- Typography: Full-size fonts
+- Spacing: Optimal padding and margins
+- Advanced Effects: Vertical lines, language switchers, full-width sections
+
+##  Installation & Setup
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn package manager
+- Git (for version control)
+
+### Step 1: Clone the Repository
+\\\ash
+git clone https://github.com/yourusername/portfolio-task.git
+cd portfolio-task
+\\\
+
+### Step 2: Install Dependencies
+\\\ash
+npm install
+\\\
+
+### Step 3: Set Up Environment Variables
+Create a \.env.local\ file in the root directory:
+\\\env
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+\\\
+
+### Step 4: Run Development Server
+\\\ash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\\\
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The website will be available at http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+##  Build & Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build for Production
+\\\ash
+npm run build
+\\\
 
-## Learn More
+### Start Production Server
+\\\ash
+npm start
+\\\
 
-To learn more about Next.js, take a look at the following resources:
+### Run Linting
+\\\ash
+npm run lint
+\\\
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+##  Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`
+portfolio-task/
+ src/
+    app/
+       layout.jsx          # Root layout with metadata
+       page.jsx            # Home page
+       globals.css         # Global styles
+    components/
+        Navbar.jsx          # Navigation bar
+        Sidebar.jsx         # Side navigation
+        Hero.jsx            # Hero section
+        Resume.jsx          # Resume/Timeline section
+        Skills.jsx          # Skills section
+        Portfolio.jsx       # Portfolio projects
+        Blog.jsx            # Blog posts
+        Pricing.jsx         # Pricing plans
+        Contact.jsx         # Contact form
+        Footer.jsx          # Footer
+ public/
+    icons/                  # Icon assets
+    images/                 # Image assets
+ package.json                # Dependencies
+ tailwind.config.js          # Tailwind CSS config
+ postcss.config.js           # PostCSS config
+`
 
-## Deploy on Vercel
+##  Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Color Palette
+- **Primary**: #f59e0b (Amber)
+- **Secondary**: #F5BD4D (Light Amber)
+- **Background**: #171B1A (Dark)
+- **Card Background**: #1a1e1d (Slightly lighter dark)
+- **Border**: #2a2f2e (Dark gray)
+- **Text**: #ffffff (White)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Typography
+- Font Family: DM Sans (Google Fonts)
+- Weights: 400 (Regular), 500 (Medium), 700 (Bold)
+
+##  Performance Optimization
+- Next.js Image component for auto-optimization
+- Google Fonts with font-display: swap
+- Code splitting and lazy loading
+- Automatic WebP format conversion
+
+##  SEO Optimization
+- Comprehensive metadata in layout.jsx
+- Semantic HTML5 structure
+- Descriptive image alt text
+- Open Graph tags for social sharing
+- Mobile-responsive design
+
+##  Accessibility (WCAG 2.1 Level AA)
+- All images with descriptive alt text
+- Proper form labels and ARIA attributes
+- Keyboard navigation support
+- Focus indicators on interactive elements
+- Semantic HTML elements
+- Color contrast compliance
+
+##  Browser Support
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+##  Getting Help
+
+### Common Issues
+
+**Port 3000 already in use:**
+\\\ash
+npm run dev -- -p 3001
+\\\
+
+**Dependencies not installing:**
+\\\ash
+rm -rf node_modules package-lock.json
+npm install
+\\\
+
+##  License
+
+MIT License - see LICENSE file for details
+
+##  Author
+
+**Daryl Smith** - Creative Developer & UI/UX Design Expert
+
+---
+
+**Version**: 1.0.0  
+**Status**: Production Ready 

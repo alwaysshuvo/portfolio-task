@@ -1,22 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 const menu = [
-  { id: 1, icon: "/icons/home.png", path: "/" },
-  { id: 2, icon: "/icons/profile-about.png", path: "/about" },
-  { id: 3, icon: "/icons/portfolio.png", path: "/portfolio" },
-  { id: 4, icon: "/icons/blog.png", path: "/blog" },
-  { id: 5, icon: "/icons/contact.png", path: "/contact" },
+  { id: 1, icon: "/icons/home.png", section: "home", label: "Home" },
+  { id: 2, icon: "/icons/profile-about.png", section: "skills", label: "Skills" },
+  { id: 3, icon: "/icons/portfolio.png", section: "portfolio", label: "Portfolio" },
+  { id: 4, icon: "/icons/blog.png", section: "blog", label: "Blog" },
+  { id: 5, icon: "/icons/contact.png", section: "contact", label: "Contact" },
 ];
 
 export default function Sidebar() {
-  const pathname = usePathname();
+  const handleNavigation = (section) => {
+  const target = document.getElementById(section);
+
+  if (target) {
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
+
 
   return (
     <aside
-      className="hidden md:flex w-[72px] min-h-screen border-r border-[#1f2a25] flex-col py-6 bg-no-repeat bg-cover bottom-0"
+      className="sticky top-0 hidden md:flex w-[72px] h-screen border-r border-[#1f2a25] flex-col py-6 bg-no-repeat bg-cover overflow-y-auto z-30"
       style={{
         backgroundImage: "url('/images/vertical-line.png')",
         backgroundSize: "92px 400px",
@@ -25,23 +34,22 @@ export default function Sidebar() {
       {/* Icons container */}
       <div className="flex flex-col gap-4 mt-20 items-center">
         {menu.map((item) => {
-          const isActive = pathname === item.path;
-
           return (
-            <div
+            <button
               key={item.id}
-              className={`w-8 h-8 flex items-center justify-center rounded-md cursor-pointer transition
-                ${isActive ? "bg-[#f59e0b] shadow-md" : "hover:bg-[#1f2a25]"}
-              `}
+              onClick={() => handleNavigation(item.section)}
+              className="w-8 h-8 flex items-center justify-center rounded-md cursor-pointer transition hover:bg-[#1f2a25] focus-visible:outline-2 focus-visible:outline-[#f59e0b]"
+              aria-label={item.label}
+              title={item.label}
             >
               <Image
                 src={item.icon}
                 width={18}
                 height={18}
-                alt="icon"
-                className={isActive ? "brightness-0 invert" : "opacity-80"}
+                alt={item.label}
+                className="opacity-80 hover:opacity-100"
               />
-            </div>
+            </button>
           );
         })}
       </div>

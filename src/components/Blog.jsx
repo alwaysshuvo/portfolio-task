@@ -80,21 +80,21 @@ export default function Blog() {
   const blogPosts = displayOrder.map((index) => allBlogPosts[index]);
 
   return (
-    <section className="w-full bg-[#171B1A] py-24">
+    <section id="blog" className="w-full bg-[#171B1A] py-12 md:py-24">
       {/* Section Header */}
-      <h2 className="text-center text-[48px] font-bold text-white mb-20">
+      <h2 className="text-center text-3xl md:text-[48px] font-bold text-white mb-12 md:mb-20 px-4">
         Blog
       </h2>
 
       {/* Left empty + Right content (like Skills/Resume/Portfolio) */}
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Left empty space */}
-        <div className="w-[525px]"></div>
+        <div className="hidden md:block md:w-[525px]"></div>
 
         {/* Right content */}
-        <div className="flex-1 pr-16">
+        <div className="flex-1 md:pr-16 px-4 md:px-0">
           <div className="max-w-3xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               {blogPosts.map((post) => (
                 <div key={post.id} className="group cursor-pointer">
                   {/* Image Container */}
@@ -113,20 +113,20 @@ export default function Blog() {
                   </div>
 
                   {/* Content */}
-                  <div className="bg-black p-4 rounded-b-lg">
+                  <div className="bg-black p-3 md:p-4 rounded-b-lg">
                     <p className="text-[#747474] text-xs mb-2">
                       {post.category} | {post.date}
                     </p>
 
-                    <h3 className="text-white font-bold text-[18px] mb-3 leading-snug group-hover:text-[#f59e0b] transition">
+                    <h3 className="text-white font-bold text-sm md:text-[18px] mb-2 md:mb-3 leading-snug group-hover:text-[#f59e0b] transition">
                       {post.title}
                     </h3>
 
-                    <p className="text-[#979797] text-[14px] mb-4 leading-relaxed">
+                    <p className="text-[#979797] text-xs md:text-[14px] mb-3 md:mb-4 leading-relaxed">
                       {post.excerpt}
                     </p>
 
-                    <p className="text-white text-[14px]">
+                    <p className="text-white text-xs md:text-[14px]">
                       {post.author}
                     </p>
                   </div>

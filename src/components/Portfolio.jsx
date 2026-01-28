@@ -90,29 +90,29 @@ export default function Portfolio() {
   const rightColumn = filteredProjects.slice(4);
 
   return (
-    <section className="w-full bg-[#171B1A] py-24">
+    <section id="portfolio" className="w-full bg-[#171B1A] py-24">
       <h2 className="text-center text-[48px] font-bold text-white mb-8">
         Portfolio
       </h2>
 
       {/* Center locked container */}
       <div className="max-w-[1600px] mx-auto">
-        <div className="grid grid-cols-[525px_1fr]">
+        <div className="grid grid-cols-1 md:grid-cols-[525px_1fr]">
           {/* Left empty space */}
-          <div></div>
+          <div className="hidden md:block"></div>
 
           {/* Right content */}
-          <div className="pr-16">
+          <div className="md:pr-16 px-4 md:px-0">
             <PortfolioFilter onChange={setActiveCategory} />
 
-            <div className="max-w-3xl grid grid-cols-2 gap-6">
-              <div className="flex flex-col gap-6">
+            <div className="max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+              <div className="flex flex-col gap-3 md:gap-6">
                 {leftColumn.map((item) => (
                   <Card key={item.id} item={item} />
                 ))}
               </div>
 
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-3 md:gap-6">
                 {rightColumn.map((item) => (
                   <Card key={item.id} item={item} />
                 ))}
@@ -139,14 +139,14 @@ function Card({ item }) {
       />
 
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition flex flex-col items-center justify-center opacity-0 group-hover:opacity-100">
-        <h3 className="text-white font-bold text-lg text-center">
+        <h3 className="text-white font-bold text-base md:text-lg text-center px-2">
           {item.title}
         </h3>
-        <p className="text-[#f59e0b] text-sm mt-1">{item.subtitle}</p>
+        <p className="text-[#f59e0b] text-xs md:text-sm mt-1">{item.subtitle}</p>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3">
-        <h4 className="text-white text-sm font-semibold">{item.title}</h4>
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-2 md:p-3">
+        <h4 className="text-white text-xs md:text-sm font-semibold">{item.title}</h4>
         <p className="text-gray-400 text-xs">{item.subtitle}</p>
       </div>
     </div>

@@ -4,26 +4,30 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
+  const handleHomeClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <nav className="w-full h-16 flex items-center justify-between px-8 bg-[##121414] border-b border-[#1f2a25]">
+    <nav className="sticky top-0 z-40 w-full h-12 md:h-16 flex items-center justify-between px-4 md:px-8 bg-[##121414] border-b border-[#1f2a25]">
       <div className="flex flex-col">
-        <h1 className="text-[32px] leading-[100%] font-bold">
+        <h1 className="text-xl md:text-[32px] leading-[100%] font-bold">
           Daryl <span className="text-[#f59e0b]">Smith</span>
         </h1>
 
-        <p className="text-[18px] leading-[100%] font-normal text-[#C2C2C2]">
+        <p className="text-xs md:text-[18px] leading-[100%] font-normal text-[#C2C2C2]">
           UI/UX designer
         </p>
       </div>
 
       {/* Middle: Home */}
-      <div className="flex items-center gap-2">
+      <button onClick={handleHomeClick} className="hidden md:flex items-center gap-2 cursor-pointer hover:opacity-80 transition" aria-label="Scroll to top">
         <div className="w-10 h-10 flex items-center justify-center rounded-md bg-gradient-to-br from-[#F5BD4D] to-[#F89222]">
           <Image
             src="/icons/home.png"
             width={18}
             height={18}
-            alt="home"
+            alt="Home icon"
             className="brightness-0 invert"
           />
         </div>
@@ -31,7 +35,7 @@ export default function Navbar() {
         <span className="text-[24px] leading-[100%] font-bold text-white">
           Home
         </span>
-      </div>
+      </button>
 
       {/* Right: Button */}
       <div className="relative inline-block">

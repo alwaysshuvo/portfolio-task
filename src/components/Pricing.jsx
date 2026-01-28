@@ -69,53 +69,49 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="w-full bg-[#171B1A] py-24">
+    <section className="w-full bg-[#171B1A] py-12 md:py-24">
       {/* Title */}
-      <h2 className="text-center text-[48px] font-bold text-white mb-20">
+      <h2 className="text-center text-3xl md:text-[48px] font-bold text-white mb-12 md:mb-20 px-4">
         Pricing
       </h2>
 
       {/* Left empty + Right content (like Skills/Resume) */}
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Left empty space */}
-        <div className="w-[525px]"></div>
+        <div className="hidden md:block md:w-[525px]"></div>
 
         {/* Right content */}
-        <div className="flex-1 pr-16">
+        <div className="flex-1 md:pr-16 px-4 md:px-0">
           <div className="max-w-5xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {pricingPlans.map((plan) => (
                 <div
                   key={plan.id}
-                  className="bg-black rounded-lg p-6 border border-[#2a2f2e] "
+                  className="bg-black rounded-lg p-4 md:p-6 border border-[#2a2f2e]"
                 >
                   {/* Badge */}
-                  <div className="mb-6 text-left">
+                  <div className="mb-4 md:mb-6 text-left">
                     <span
-                      className="inline-block  px-5 py-2 ml-[-22px] text-white text-[16px] font-bold rounded-r-full rounded-l-md bg-[linear-gradient(90deg,#4A300E_0%,#4A2E0D_100%)]
-
-
-
-"
+                      className="inline-block px-4 md:px-5 py-2 ml-[-22px] text-white text-sm md:text-[16px] font-bold rounded-r-full rounded-l-md bg-[linear-gradient(90deg,#4A300E_0%,#4A2E0D_100%)]"
                     >
                       {plan.badge}
                     </span>
                   </div>
 
                   {/* Price */}
-                  <div className="mb-8">
-                    <span className="text-white text-5xl font-bold">
+                  <div className="mb-6 md:mb-8">
+                    <span className="text-white text-3xl md:text-5xl font-bold">
                       {plan.price}
                     </span>
-                    <span className="text-white text-[18px]">/month</span>
+                    <span className="text-white text-sm md:text-[18px]">/month</span>
                   </div>
 
                   {/* Features */}
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-2 md:space-y-3 mb-6 md:mb-8">
                     {plan.features.map((feature, index) => (
                       <div key={index} className="flex items-center gap-3">
                         <span
-                          className={`text-[16px] ${
+                          className={`text-sm md:text-[16px] ${
                             feature.included
                               ? "text-white"
                               : "text-[#979797] line-through"
@@ -129,8 +125,7 @@ export default function Pricing() {
 
                   {/* Button */}
                   <button
-                    className="  py-3 px-4 rounded-lg border border-[#F5BD4D] text-[#F5BD4D] font-semibold bg-transparent hover:text-white hover:shadow-[0_0_20px_rgba(245,189,77,0.4)]
-  "
+                    className="w-full py-2 md:py-3 px-4 rounded-lg border border-[#F5BD4D] text-[#F5BD4D] font-semibold bg-transparent hover:text-white hover:shadow-[0_0_20px_rgba(245,189,77,0.4)] text-sm md:text-base"
                   >
                     Get Started
                   </button>
